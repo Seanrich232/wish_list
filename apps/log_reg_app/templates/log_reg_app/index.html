@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+<body class="vsc-initialized">
+        <div class="container">
+            <br>
+            <br>
+            <h1>Registration</h1>
+            <br>
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <br>
+            <form action="/processLogReg" method="POST">
+                <div class="form-group row">
+                    {% csrf_token %}
+                    <label for="name" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="name" id="name" value=" ">
+                    </div>
+                    <br>
+                    <br>
+                    <label for="username" class="col-sm-2 col-form-label">Username</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="username" id="username" value=" ">
+                    </div>
+                    <br>
+                    <br>
+                    <label for="password" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" name="password" id="password">
+                    </div>
+                    <br>
+                    <br>
+                    <label for="password_confirm" class="col-sm-2 col-form-label">Password Confirm</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" name="confirm" id="confirm">
+                    </div>
+                    <br>
+                    <br>
+                    <label for="hiredate" class="col-sm-2 col-form-label">Date Hired</label>
+                    <div class="col-sm-4">
+                        <input type="date" class="form-control" name="hiredate" id="hiredate">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <input type="submit" name="" value="Registration" class="btn btn-primary pull-right">
+                    </div>
+                </div>
+            </form>
+        <div>
+            <form action="/processLogReg" method="post">
+                {% csrf_token %}
+                <h1>login</h1>
+                    <label for="username" class="col-sm-2 col-form-label">Username</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" name="username" id="username" value=" ">
+                    </div>
+                    <label for="password" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-4">
+                        <input type="password" class="form-control" name="password" id="password">
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <input type="submit" name="" value="login" class="btn btn-primary pull-right">
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+    </body>
+    </html>
