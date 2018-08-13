@@ -33,7 +33,7 @@ class WishManager(models.Manager):
 class Wish(models.Model):
     product = models.CharField(max_length=255)
     wisher = models.ManyToManyField(User, related_name="wisher_wish")
-    wish_creator = models.ForeignKey(User, related_name="created_wish")
+    wish_creator = models.ForeignKey(User, related_name="created_wish", on_delete=models.CACADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = WishManager()
